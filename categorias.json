@@ -1,0 +1,243 @@
+{
+    "actividades_economicas": [
+        {
+            "actividad": "Producción, elaboración o fabricación de bienes",
+            "clave": [
+                "hacer",
+                "vender"
+            ],
+            "categorias": [
+                {
+                    "codigo": "311812",
+                    "descripcion": "Panificación tradicional",
+                    "palabras_clave": [
+                        "pan",
+                        "bollos",
+                        "empanadas",
+                        "pasteles",
+                        "pan dulce",
+                        "pan integral",
+                        "churros",
+                        "pan para pizza",
+                        "pambazos",
+                        "roscas",
+                        "pan molido",
+                        "pan de centeno"
+                    ]
+                },
+                {
+                    "codigo": "311830",
+                    "descripcion": "Elaboración de tortillas de maíz y molienda de nixtamal",
+                    "palabras_clave": [
+                        "tortilla",
+                        "nixtamal",
+                        "molino"
+                    ]
+                },
+                {
+                    "codigo": "312120",
+                    "descripcion": "Elaboración de cerveza",
+                    "palabras_clave": [
+                        "cerveza",
+                        "fabricar cerveza",
+                        "producción de cerveza"
+                    ]
+                }
+            ]
+        },
+        {
+            "actividad": "Compra y venta de mercancías",
+            "clave": [
+               
+                "vender"
+                
+            ],
+            "categorias": [ 
+                {
+                    "codigo": "461110",
+                    "descripcion": "Comercio al por menor en tiendas de abarrotes, ultramarinos y misceláneas",
+                    "palabras_clave": [
+                        "abarrotes",
+                        "bodega",
+                        "almacén",
+                        "miscelánea"
+                    ]
+                },
+                {
+                    "codigo": "461130",
+                    "descripcion": "Comercio al por menor de frutas y verduras frescas",
+                    "palabras_clave": [
+                        "frutas",
+                        "verduras",
+                        "frutería",
+                        "verdulería"
+                    ]
+                },
+                {
+                    "codigo": "463211",
+                    "descripcion": "Comercio al por menor de ropa, excepto de bebé y lencería",
+                    "palabras_clave": [
+                        "ropa",
+                        "camisa",
+                        "pantalón",
+                        "vestido"
+                    ]
+                },
+                {
+                    "codigo": "465311",
+                    "descripcion": "Comercio al por menor de artículos de papelería",
+                    "palabras_clave": [
+                        "papelería",
+                        "material escolar",
+                        "cuadernos",
+                        "plumas"
+                    ]
+                },
+                {
+                    "codigo": "465912",
+                    "descripcion": "Comercio al por menor de regalos o novedades",
+                    "palabras_clave": [
+                        "regalos",
+                        "novedades",
+                        "juguetes",
+                        "souvenirs"
+                    ]
+                },
+                {
+                    "codigo": "466410",
+                    "descripcion": "Comercio al por menor de artículos usados",
+                    "palabras_clave": [
+                        "ropa usada",
+                        "segunda mano",
+                        "paca",
+                        "usado",
+                        "muebles usados"
+                    ]
+                },
+                {
+                    "codigo": "463213",
+                    "descripcion": "Comercio al por menor de ropa interior",
+                    "palabras_clave": [
+                        "lencería",
+                        "ropa interior",
+                        "ropa íntima"
+                    ]
+                },
+                {
+                    "codigo": "432120",
+                    "descripcion": "Comercio al por mayor de ropa interior",
+                    "palabras_clave": [
+                        "lencería por mayoreo",
+                        "ropa interior al por mayor"
+                    ]
+                },
+                {
+                    "codigo": "461212",
+                    "descripcion": "Comercio al por menor de cerveza",
+                    "palabras_clave": [
+                        "venta de cerveza",
+                        "cerveza al por menor",
+                        "cerveza"
+                    ]
+                }
+            ]
+        },
+        {
+            "actividad": "Servicios no financieros",
+            "clave": [
+                "vender",
+                "servir"
+            ],
+            "categorias": [
+                {
+                    "codigo": "722513",
+                    "descripcion": "Restaurantes con servicio de preparación de antojitos",
+                    "palabras_clave": [
+                        "antojitos",
+                        "tlayudas",
+                        "pozolería",
+                        "huaraches",
+                        "birria",
+                        "menudo",
+                        "barbacoa",
+                        "quesadillas"
+                    ]
+                },
+                {
+                    "codigo": "722514",
+                    "descripcion": "Restaurantes con servicio de preparación de tacos y tortas",
+                    "palabras_clave": [
+                        "taquería",
+                        "tacos",
+                        "tortas",
+                        "asadero",
+                        "tortería"
+                    ]
+                },
+                {
+                    "codigo": "722515",
+                    "descripcion": "Cafeterías, fuentes de sodas, neverías, refresquerías y similares",
+                    "palabras_clave": [
+                        "cafetería",
+                        "jugos",
+                        "nevería",
+                        "refresquería",
+                        "juguería"
+                    ]
+                },
+                {
+                    "codigo": "722517",
+                    "descripcion": "Restaurantes con servicio de preparación de pizzas, hamburguesas, hot dogs y pollos rostizados para llevar",
+                    "palabras_clave": [
+                        "hamburguesas",
+                        "pizza",
+                        "pastas",
+                        "alitas",
+                        "ensaladas",
+                        "pollos rostizados"
+                    ]
+                },
+                {
+                    "codigo": "722519",
+                    "descripcion": "Servicios de preparación de otros alimentos para consumo inmediato",
+                    "palabras_clave": [
+                        "duros",
+                        "elotes",
+                        "mangonadas",
+                        "cocteles",
+                        "trolelote",
+                        "chascas",
+                        "tamales",
+                        "atole",
+                        "gelatinas"
+                    ]
+                },
+                {
+                    "codigo": "812110",
+                    "descripcion": "Salones y clínicas de belleza y peluquerías",
+                    "palabras_clave": [
+                        "peluquería",
+                        "salón de belleza",
+                        "barbería",
+                        "estética",
+                        "spa",
+                        "tattoo",
+                        "masajes"
+                    ]
+                },
+                {
+                    "codigo": "722412",
+                    "descripcion": "Bares, cantinas y similares",
+                    "palabras_clave": [
+                        "bar",
+                        "cerveza",
+                        "cantina",
+                        "cervecería",
+                        "bebidas alcohólicas",
+                        "consumo en sitio"
+                    ]
+                }
+            ]
+        }
+    ]
+}

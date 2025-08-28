@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        main {
+            
+            background-color: rgb(252, 249, 245);
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+            width: 80%;
+            height: 70%;
+            
+        }
+
+        #pregunta {
+            position: relative;
+            top: 80%;
+            width: 85%;
+        }
+        form{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #preguntasub{
+            background-color: rgb(214, 255, 255);
+            border-radius: 50px;
+            width: 85%;
+            margin-left: 30px;
+            
+            
+        }
+         #contestacion{
+            background-color: rgb(229, 255, 214);
+            border-radius: 50px;
+            width: 85%;
+            margin-left: 30px;
+            
+            
+        }
+        #pensando{
+            background-color: rgb(229, 255, 214);
+            border-radius: 50px;
+            width: 85%;
+            margin-left: 30px;
+            display: none;
+
+        }
+        #titilar{
+            animation-name: titil;
+            animation-duration: .5s;
+            animation-iteration-count: infinite;
+            
+        }
+        @keyframes titil {
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form id="form" method="post">
+            <h1 id="logrado"></h1>
+            <p id="preguntasub" ></p>
+            <p id="pensando">pensando<span id="titilar">.....</span></p>
+            <p id="contestacion"></p>
+            
+            <input id="pregunta" type="text">
+            <input type="submit">
+        </form>
+    </main>
+    <script>
+        const sub = document.getElementById("form").addEventListener("submit", respuesta)
+
+        function respuesta(event) {
+            event.preventDefault();
+            let pensando = document.getElementById("pensando")
+            let logrado = document.getElementById("logrado");
+            let preguntasub = document.getElementById("preguntasub");
+            const questioncampo = document.getElementById("pregunta");
+
+            
+            let question = questioncampo.value;
+            preguntasub.innerHTML = question;
+            let respuesta = document.getElementById("contestacion");
+            questioncampo.value = "";
+            pensando.style.display = "block"
+
+
+
+            axios.post("http://10.210.31.24:8000/procesar", {
+                question: question
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+                .then(response => {
+                    logrado.innerHTML = "se logro";
+                    pensando.style.display = "none"
+
+                    
+                    console.log("es", response.data.respuesta)
+                    respuesta.innerHTML = response.data.respuesta
+
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+
+        }
+
+    </script>
+</body>
+
+</html>
