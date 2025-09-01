@@ -53,7 +53,7 @@ async def procesar(conversacion: Question):
 
         respuestaproducto = await buscaqueda(respuestaunoo['PdSr'], respuestaunoo['Intencion'])
 
-        masProbacles = Masprobalbes(respuestaproducto,0.50)
+        masProbacles = Masprobalbes(respuestaproducto,0.5)
 
         LIMPIOS = quitarRepetidos(masProbacles)
         res = tercermodelo(LIMPIOS,conversacion.question)############
@@ -79,6 +79,7 @@ async def procesar(conversacion: Question):
         print("respuesta intencion local=======")
 
         respuestaproducto = await buscaqueda(respuestaunoo['Local'], respuestaunoo['Intencion'])
+        
         masProbacles = Masprobalbes(respuestaproducto,0.8)
         LIMPIOS = quitarRepetidos(masProbacles)
         res = tercermodelo(LIMPIOS,conversacion.question)############
@@ -157,23 +158,30 @@ async def busquedaIntencion(Intencion):
 
 
 def quitarRepetidos(categorias):
+    #print(f"{len(categorias)}: repetidos: {categorias}")
     snRepetidos=[]
     nmCategoria = []
     for cat in categorias:
+        #print("cat: ",cat)
         if cat['categoria_codigo'] not in nmCategoria:
+            #print("entor+++++")
+
             snRepetidos.append(cat)
             nmCategoria.append(cat['categoria_codigo'])
-
+            #print(f"no repetidas {nmCategoria}\n checar {cat['categoria_codigo'] } en {nmCategoria} es: {cat['categoria_codigo'] not in nmCategoria}\n")
+    
     return snRepetidos
 
 
 def Masprobalbes(categorias, probabilida):
+    #print("las categorias son: ",categorias['encontrado'])
     guardar = []
     for cat in categorias['encontrado']:
        
        if float(cat['similitud'])>probabilida:
          guardar.append(cat)  
 
+    #print("final: ", guardar)
     return guardar
 
 
