@@ -28,26 +28,75 @@
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
             width: 80%;
             height: 70%;
+            border-radius: 25px;
+            padding: 0%;
+            margin: 0%;
 
         }
 
         #pregunta {
             position: relative;
-            top: 80%;
-            width: 85%;
+            
+            width: 75%;
+            border-radius: 10px;
+            border-color: white;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.185);
+            margin-right: 10px;
+            border-bottom: 0px;
+        }
+        #boton{
+            border-radius: 100px;
+            width: 35px;
+            height: 35px;
+            background-color: rgb(70, 238, 196);
+            border-color: white;
+            border-bottom: 0px;
+            color: white;
+            font-size: 25px;
+            
+        }
+        #contenedor{
+            position: relative;
+           
+            width: 100%;
+            height: 15%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: rgb(236, 235, 235);
+            border-bottom-left-radius: 25px;
+            margin-top: 0%;
+            padding-top: 0%;
+            border-top: 2px solid rgba(0, 0, 0, 0.274);
+
         }
 
         form {
             align-items: center;
             justify-content: center;
             text-align: center;
+            background-color: rgb(252, 246, 219);
+            width: 100%;
+            height: 100%;
+            margin: 0%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            padding-top: 0%;
+            padding: 0%;
+            border: 1px solid rgba(0, 0, 0, 0.185)
+
         }
 
         #preguntasub {
             background-color: rgb(214, 255, 255);
             border-radius: 50px;
             width: 85%;
-            margin-left: 30px;
+            margin-left: 42px;
+            margin-bottom: 0px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.137);
+            display: none;
+
 
 
         }
@@ -57,20 +106,23 @@
             border-radius: 10px;
             width: 95%;
             margin-left: 5px;
-            overflow: auto;
-            max-height: 300px;
             text-align: left;
             padding: 5px;
             display: none;
+            height: auto;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.137);
+
 
         }
 
         #pensando {
             background-color: rgb(229, 255, 214);
             border-radius: 50px;
-            width: 85%;
-            margin-left: 30px;
+            width: 80%;
+            margin-left: 11px;
             display: none;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.137);
+
 
         }
 
@@ -97,11 +149,20 @@
         }
 
         #cen {
-            background-color: rgb(255, 255, 255);
+            
             text-align: center;
             align-items: center;
             justify-content: center;
-            display: flex;
+            
+            overflow: auto;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            margin-top: 0%;
+            width: 100%;
+            height: 85%;
+            margin-bottom: 0%;
+            padding-bottom: 0%;
+            
         }
 
         #pen {
@@ -115,6 +176,9 @@
             width: 15px;
             height: 15px;
             display: none;
+            margin-left: 20px;
+            margin-top: 15px;
+            
 
 
         }
@@ -128,23 +192,46 @@
                 transform: rotate(360deg);
             }
         }
+        #tringulo{
+            width: 0px;
+            height: 0px;
+            background-color: black;
+            border-top: 4px solid red;
+            border-bottom: 4px solid blue;
+            border-left: 8px solid yellow;
+        }
+        #guardar{
+            display: flex;
+            margin-top: 0%;
+        }
     </style>
 </head>
 
 <body>
+    
     <main>
-        <form id="form" method="post">
-            <h1 id="logrado"></h1>
-            <p id="preguntasub"></p>
-            <div id="cen">
-                <p id="pensando">pensando<span id="titilar">.....</span></p>
-                <div id="pen"> </div>
-            </div>
-            <br>
-            <p id="contestacion"></p>
+        
 
-            <input id="pregunta" type="text">
-            <input type="submit">
+        <form id="form" method="post">
+           
+            <div id="cen">
+                <p id="preguntasub"></p>
+
+                <div id="guardar">
+                    <p id="pensando">pensando<span id="titilar">.....</span></p>
+                    <div id="pen"> </div>
+                </div>
+                <p id="contestacion"></p>
+
+            </div>
+
+            <div id="contenedor">
+                <input id="pregunta" type="text">
+               <!-- <input id="boton" type="submit" value="">-->
+                <button id="boton" type="submit">
+                    ↑
+                </button>
+            </div>
         </form>
     </main>
     <script>
@@ -154,10 +241,9 @@
             event.preventDefault();
             let girar = document.getElementById("pen")
             let pensando = document.getElementById("pensando")
-            let logrado = document.getElementById("logrado");
             let preguntasub = document.getElementById("preguntasub");
             const questioncampo = document.getElementById("pregunta");
-
+            preguntasub.style.display = "block"
 
             let question = questioncampo.value;
             preguntasub.innerHTML = question;
@@ -179,7 +265,7 @@
                 })
 
                     .then(response => {
-                        logrado.innerHTML = "se logro";
+                       
                         pensando.style.display = "none"
                         girar.style.display = "none"
 
@@ -202,3 +288,8 @@
 </body>
 
 </html>
+
+
+
+
+

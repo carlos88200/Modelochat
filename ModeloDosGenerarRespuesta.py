@@ -31,10 +31,10 @@ haz listas
 Pregunta del usuario:
 {pregunta}
 
-Categorías encontradas (con similitud):
+Categorías encontradas (con similitud), no modifiques las categorias, son tal cual:
 {categoria}
 
-Chatbot (responde de manera clara y ordenada):
+Chatbot (responde de manera clara y ordenada sin modificar categorias):
 """
 
 
