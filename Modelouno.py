@@ -20,7 +20,7 @@ Tu tarea es detectar si el usuario menciona alguno de los siguientes elementos:
 3. **Establecimiento o local** (Local)
 
 REGLAS IMPORTANTES:
-- Solo considera como intención válida: vender, servir o hacer. Si se menciona otra palabra distinta, ignórala.
+- Solo considera como intención válida: vender, servir o hacer. Si se menciona otra palabra distinta, ignórala a menos que sea un sinonimo de las 3 principales.
 - Si no se menciona ninguna intención válida ni producto ni establecimiento, responde con: `norp`
 - Si solo se menciona el producto o servicio, responde así: `PdSr: <producto>`
 - Si se menciona el establecimiento, responde así: `Local: <establecimiento>` , `Intencion: servir 
@@ -44,7 +44,7 @@ para tu respuesta hay 3 casos:
 *Si en la pregunta se menciono el establecimiento en donde se vende el producto:
     Local:
     Intencion:
-*si solo se menciona intencion la intencion y el producto el formato de tu respuesta debe de ser:
+*si solo se menciona  la intencion y el producto el formato de tu respuesta debe de ser:
     Intencion:
     PdSr:
 no des más información.

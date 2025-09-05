@@ -43,6 +43,7 @@
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.185);
             margin-right: 10px;
             border-bottom: 0px;
+            outline: none;
         }
         #boton{
             border-radius: 100px;
@@ -90,12 +91,17 @@
 
         #preguntasub {
             background-color: rgb(214, 255, 255);
-            border-radius: 50px;
+            border-radius: 40px;
             width: 85%;
-            margin-left: 42px;
+            margin-left: 13%;
+            
             margin-bottom: 0px;
             box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.137);
             display: none;
+            text-align: left;
+            padding: 1%;
+            
+           
 
 
 
@@ -111,7 +117,7 @@
             display: none;
             height: auto;
             box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.137);
-
+            padding: 1%;
 
         }
 
@@ -208,6 +214,7 @@
 </head>
 
 <body>
+    <div id="prueba"></div>
     
     <main>
         
@@ -256,7 +263,8 @@
 
 
 
-                axios.post("http://localhost:8000/procesar", {
+                try {
+                    axios.post("http://localhost:8000/procesar", {
                     question: question
                 }, {
                     headers: {
@@ -276,11 +284,22 @@
 
                     })
                     .catch(error => {
-                        console.log(error)
+                        console.log("error",error)
+                        respuesta.style.display = "block"
+                        respuesta.innerHTML = "Error: "+ error.message
+                        console.log("message: ", error.message)
+                        pensando.style.display = "none"
+                        girar.style.display = "none"
                     })
+                } catch (error) {
+                    respuesta.style.display = "block"
+                    respuesta.innerHTML = "Error"
+                    pensando.style.display = "none"
+                }
 
             } else{
                 preguntasub.innerHTML = "Ingresa pregunta"
+                pensando.style.display = none
             }
         }
 

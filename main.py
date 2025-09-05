@@ -46,14 +46,14 @@ async def procesar(conversacion: Question):
         print("respuesta general=======")
         respuestaproducto = await segundomodelo(respuestaunoo['respuesta'])
         
-        return respuestaproducto
+        return {"respuesta":respuestaproducto}
 
     elif 'PdSr' in respuestaunoo.keys() and 'Intencion' in respuestaunoo.keys():#producto intencion
         print("respuesta pdsr y intencion=======")
 
         respuestaproducto = await buscaqueda(respuestaunoo['PdSr'], respuestaunoo['Intencion'])
 
-        masProbacles = Masprobalbes(respuestaproducto,0.5)
+        masProbacles = Masprobalbes(respuestaproducto,0.52)
 
         LIMPIOS = quitarRepetidos(masProbacles)
         res = tercermodelo(LIMPIOS,conversacion.question)############
@@ -65,7 +65,7 @@ async def procesar(conversacion: Question):
         print("respuesta pdsr=======")
 
         respuestaproducto = await buscaquedaPS(respuestaunoo['PdSr'])
-        masProbacles = Masprobalbes(respuestaproducto,0.1)
+        masProbacles = Masprobalbes(respuestaproducto,0.5)
         LIMPIOS = quitarRepetidos(masProbacles)
         
         #print(f"*******respuestaproducto{respuestaproducto}, \nlimpios; {LIMPIOS}")
@@ -96,7 +96,9 @@ async def procesar(conversacion: Question):
 
 async def segundomodelo(pregunta):
     Modelodos = modelodosgenerar()
+    
     respuesta = Modelodos.contestarbasico(pregunta)
+    #print("respuesta main:",respuesta)
     return respuesta
 
 async def primermodelo(preguntaa):
@@ -181,7 +183,7 @@ def Masprobalbes(categorias, probabilida):
        if float(cat['similitud'])>probabilida:
          guardar.append(cat)  
 
-    #print("final: ", guardar)
+    print("final: ", guardar)
     return guardar
 
 

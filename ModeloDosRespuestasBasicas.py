@@ -81,7 +81,9 @@ class modelodosgenerar:
         
     
     def contestarbasico(self, pregunta):
+       # print("pregunta modelo: ", pregunta)
         respuesta = self.chain.invoke({"pregunta": pregunta}) 
+        #print("respuesta: ",respuesta)
 
         return respuesta
 
